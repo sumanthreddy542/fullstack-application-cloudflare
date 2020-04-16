@@ -164,9 +164,10 @@ async function handleRequest(request) {
     let stringMatch = cookie.match("variant=[^;]");
     try{
       randomNum = parseInt(stringMatch[0].charAt(stringMatch[0].length-1));
-      if(randomNum !== 1 || randomNum !== 0){
-        randomNum = randonNumInstance.GenerateRandomNumber();
+      if(randomNum === 0 || randomNum === 1 ){  
       }
+      else
+        randomNum = randonNumInstance.GenerateRandomNumber();
     }
     catch{
       randomNum = randonNumInstance.GenerateRandomNumber();
