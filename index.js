@@ -162,7 +162,16 @@ async function handleRequest(request) {
   // else, get the number from the cookie. The cookie is saved as variant number.
   else{
     let stringMatch = cookie.match("variant=[^;]");
-    randomNum = parseInt(stringMatch[0].charAt(stringMatch[0].length-1));
+    try{
+      randomNum = parseInt(stringMatch[0].charAt(stringMatch[0].length-1));
+      if(randomNum != 0 || randomNum != 1)
+      {
+        randomNum = randonNumInstance.GenerateRandomNumber();
+      }
+    }
+    catch{
+      randomNum = randonNumInstance.GenerateRandomNumber();
+    }
   }
 
   let urlResponse = await fetch(jsonObj.variants[randomNum]);

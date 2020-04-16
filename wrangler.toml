@@ -1,4 +1,4 @@
-name = "fullstack-application"
+name = "fullstack-application-cloudflare"
 type = "javascript"
 account_id = ""
 workers_dev = true
