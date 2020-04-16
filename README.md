@@ -1,1 +1,1 @@
-Full stack application in java script using cloudflare workers.
+Full stack application in java script.
